@@ -17,6 +17,7 @@ public class GetInputFromKeyboard {
             InputStreamReader( System.in) );
         String name = "";
         System.out.print("Please Enter Your Name:");
+        
         try{
             name = dataIn.readLine();
         }catch( IOException e ){
