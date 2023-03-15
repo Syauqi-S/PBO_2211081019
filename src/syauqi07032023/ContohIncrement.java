@@ -13,12 +13,34 @@ public class ContohIncrement {
     public static void main(String[] args){
     int i = 10;
     int j = 3;
-    int k,kk = 0;
-    
-    
-    k = ++j + i;
-    System.out.println(k);
-    System.out.println(j);
-    System.out.println(i);
+    int k = 0;
+	int inc1, inc2;
+	
+    inc1 = Increment1(i,j,k);
+	
+	System.out.println("\nIncrement dengan ++j");
+    System.out.println("k = " + k);
+    System.out.println("j = " + j);
+    System.out.println("i = " + i);
+    System.out.println("Hasil inc = " + inc1);
+ 
+	
+	inc2 = Increment2(i,j,k);
+	
+	System.out.println("\nIncrement dengan j++");
+    System.out.println("k = " + k);
+    System.out.println("j = " + j);
+    System.out.println("i = " + i);
+	System.out.println("Hasil inc = " + inc2);
+	
     }
+	public static int Increment1(int i,int j,int k){
+		k = ++j + i;
+		return k;
+	}
+	
+	public static int Increment2(int i,int j,int k){
+		k = j++ + i;
+		return k;
+	}
 }
