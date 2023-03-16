@@ -15,8 +15,8 @@ public class Latihan3Buff {
     public static void main(String[] args){
     
         BufferedReader dataIn = new BufferedReader(new InputStreamReader( System.in) );
-        int a, b, c;
-        int highest;
+        int a, b, c, highest;
+        
         try{ //input nilai
             System.out.print("Masukkan nilai pertama = ");
             a = Integer.parseInt(dataIn.readLine());

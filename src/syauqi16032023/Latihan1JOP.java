@@ -14,15 +14,23 @@ public class Latihan1JOP {
     public static void main(String[] args){
     
     int number;
-    char letter;
+    String karakter; //untuk tipe data char
     boolean result;
     String str;
     
     number = Integer.parseInt(JOptionPane.showInputDialog("Masukkan Number"));
+    karakter = JOptionPane.showInputDialog(null,"Masukkan char");
+    
+    char letter = karakter.charAt(0); //mengkonversi String karakter menjadi tipe data char
+    
+    result = Boolean.parseBoolean(JOptionPane.showInputDialog("Masukkan Boolean (True/False)"));
     str = JOptionPane.showInputDialog("Masukkan String");
+            
     String msg = "Number = " + number;
+    String msg3 = "Boolean = " + result;
+    String msg2 = "Char = " + letter;
     String msg1 = "String = " + str;
         
-    JOptionPane.showMessageDialog(null, msg +"\n"+ msg1);
+    JOptionPane.showMessageDialog(null, msg +"\n"+ msg1 + "\n" + msg2 + "\n" + msg3);
     }
 }
