@@ -4,7 +4,7 @@
  */
 package syauqi16032023;
 
-import javax.swing.JOptionPane;
+import javax.swing.JOptionPane; // mengimport class JOptionPane dari package swing 
 /**
  *
  * @author LEGION Y540
@@ -15,9 +15,21 @@ public class Latihan651JOP {
         int tgs1, tgs2, tgs3, avg; //deklarasi nilai tugas dan rata-rata
         
         //input nilai tugas
+        // menambahkan while agar user tidak bisa menginput diluar range 1-100
         tgs1 = Integer.parseInt(JOptionPane.showInputDialog(null, "Masukkan Nilai 1 : "));
+        while(tgs1 < 0 || tgs1 > 100){ //kondisi jika user input diluar range
+            tgs1 = Integer.parseInt(JOptionPane.showInputDialog("Range nilai 1-100\nMasukkan nilai ulang"));
+        }
+        
         tgs2 = Integer.parseInt(JOptionPane.showInputDialog(null, "Masukkan Nilai 2 : "));
+        while(tgs2 < 0 || tgs2 > 100){
+            tgs2 = Integer.parseInt(JOptionPane.showInputDialog("Range nilai 1-100\nMasukkan nilai ulang"));
+        }
+
         tgs3 = Integer.parseInt(JOptionPane.showInputDialog(null, "Masukkan Nilai 3 : "));
+        while(tgs3 < 0 || tgs3 > 100){
+            tgs3 = Integer.parseInt(JOptionPane.showInputDialog("Range nilai 1-100\nMasukkan nilai ulang"));
+        }
         
         avg = (tgs1 + tgs2 + tgs3) / 3; //proses mencari rata-rata
             
