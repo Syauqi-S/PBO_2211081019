@@ -23,5 +23,11 @@ public class AritmatikaExample {
             for(int i = 0; i < ls.length; i++){
                 System.out.print(ls[i] + " ");
             }
+            System.out.println();
+        ls = ar.prima(5);
+            for(int i = 0; i < ls.length; i++){
+                System.out.print(ls[i] + " ");
+            }
+            System.out.println();
     }
 }

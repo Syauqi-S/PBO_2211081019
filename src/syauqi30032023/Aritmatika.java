@@ -29,6 +29,29 @@ public class Aritmatika {
         }
         return ar;
     }
+    public boolean cekprima(int a){
+        int j = 0;
+        for(int i = 1; i <= a; i++){
+            if(a%i==0){
+                j++;
+            }
+        }
+        return (j==2);
+    }
+    
+    public int[] prima(int a){
+        int[] ar = new int[a];
+        int j = 0; //index
+        int i = 1; //bil prima
+        while( j < a ){
+            if(cekprima(i)){
+                ar[j] = i;
+                j++;
+            }
+            i++;
+        }
+        return ar;
+    }
 }
     
     
