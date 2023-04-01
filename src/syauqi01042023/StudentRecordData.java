@@ -22,7 +22,7 @@ public class StudentRecordData {
         
         dataSiswa[0].setName("");
         dataSiswa[0].setAddress("");
-        dataSiswa[0].setName(0);
+        dataSiswa[0].setAge(0);
         
         System.out.println("Nama [0] : " + dataSiswa[0].getName());
     }
