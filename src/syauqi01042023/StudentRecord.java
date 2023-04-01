@@ -25,7 +25,7 @@ public class StudentRecord {
     }
     
     public void setName(String name){
-        this.name = name; //this. mengambil name dari class, dan = name, ngambil dari method
+        this.name = name; //this. mengambil name dari class, dan = name, ngambil dari parameter method
     }
 
     public String getAddress(){
@@ -98,6 +98,7 @@ public class StudentRecord {
         System.out.println("ScienceGrade " + sGrade);
     }
     
+    //construktor
     public StudentRecord(){ 
         //area inisialisasi kode;
         studentCount++;
@@ -108,9 +109,10 @@ public class StudentRecord {
         studentCount++;
     }
     
-    public StudentRecord(String name, String address){ 
+    public StudentRecord(String name, String address, int age){ 
         this.name = name; 
-        this.address = address; 
+        this.address = address;
+        this.age = age;
         studentCount++;
     }
     
