@@ -17,6 +17,7 @@ public class StudentRecord {
     private double englishGrade;
     private double scienceGrade;
     private double average;
+    private char huruf;
     
     private static int studentCount;
     
@@ -122,4 +123,26 @@ public class StudentRecord {
         scienceGrade = sGrade; 
         studentCount++;
     }
+    
+    public char getHuruf(){
+        double average1 = average;
+        if(average1 > 80 && average1 <= 100){
+            huruf = 'A';
+        }
+        else if(average1 > 65 && average1 <= 80){
+            huruf = 'B';
+        }
+        else if(average1 > 55 && average1 <= 65){
+            huruf = 'C';
+        }
+        else if(average1 > 40 && average1 <= 55){
+            huruf = 'D';
+        }
+        else{
+            huruf = 'E';
+        }
+        return huruf;
+    }
+    
 }
+    

@@ -33,7 +33,11 @@ public class StudentRecordExample {
         
         System.out.println("\nData object cris");
         cris.print("");
-        cris.print(70, 80, 90);
+      //cris.print(70, 80, 90);
+        cris.setMathGrade(80);
+        cris.setEnglishGrade(70);
+        cris.setScienceGrade(80);
+        System.out.println("average" + cris.getAverage());
         
         ali.print("");
         
