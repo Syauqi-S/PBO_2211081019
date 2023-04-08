@@ -10,13 +10,13 @@ package syauqi01042023;
  */
 public class StudentRecord {
     
-    private String name;
+    protected String name;
     private String address;
     private int age;
     private double mathGrade;
     private double englishGrade;
     private double scienceGrade;
-    private double average;
+    protected double average;
     private char huruf;
     
     private static int studentCount;
