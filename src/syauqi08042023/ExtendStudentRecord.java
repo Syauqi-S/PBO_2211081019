@@ -16,6 +16,7 @@ public class ExtendStudentRecord extends StudentRecord{
     private double pptGrade;
     private double wordGrade;
     
+    //membuat method untuk nilai computer
     public double getExcelGrade(){
         return excelGrade;
     }
@@ -40,6 +41,7 @@ public class ExtendStudentRecord extends StudentRecord{
         this.wordGrade = wordGrade;
     }
     
+    //overriding method
     @Override
     public String getName(){
         return name;
@@ -56,12 +58,16 @@ public class ExtendStudentRecord extends StudentRecord{
         return average;
     }
     
+    //membuat method main agar program dapat berjalan
     public static void main(String[] args){
+        //membuat obj c dengan class ExtendStudentRecord
         ExtendStudentRecord c = new ExtendStudentRecord();
         
+        //input nama
         String nama = JOptionPane.showInputDialog("Masukkan nama");
         c.setName(nama);
         
+        //input nilai
         int excel = Integer.parseInt(JOptionPane.showInputDialog("Masukkan nilai Excel"));
         c.setExcelGrade(excel);
         int ppt = Integer.parseInt(JOptionPane.showInputDialog("Masukkan nilai PowerPoint"));
@@ -69,6 +75,7 @@ public class ExtendStudentRecord extends StudentRecord{
         int word = Integer.parseInt(JOptionPane.showInputDialog("Masukkan nilai Word"));
         c.setWordGrade(word);
         
+        //output
         JOptionPane.showMessageDialog(null,"=====Computer Grade=====" + "\nNama : " + c.getName() 
                 + "\nNilai Excel      : " + c.getExcelGrade()
                 + "\nNilai PowerPoint : " + c.getPptGrade()
