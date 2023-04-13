@@ -78,10 +78,6 @@ public class StudentRecord {
         return average;
     }
     
-    public void setAverage(double average){
-        this.average = average;
-    }
-    
     public static int getStudentCount(){ //static menandakan variable static, menandakan miliknya class yang hanya bias dipakai classnya lgsg
         return studentCount;
     }
