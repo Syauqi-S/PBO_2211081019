@@ -94,6 +94,11 @@ public class FormAnggota extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        tblAnggota.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblAnggotaMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tblAnggota);
 
         btnInsert.setText("Insert");
@@ -209,6 +214,11 @@ public class FormAnggota extends javax.swing.JFrame {
         // TODO add your handling code here:
         controller.bersihForm();
     }//GEN-LAST:event_btnCancelActionPerformed
+
+    private void tblAnggotaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblAnggotaMouseClicked
+        // TODO add your handling code here:
+        controller.getAnggota();
+    }//GEN-LAST:event_tblAnggotaMouseClicked
 
     /**
      * @param args the command line arguments
