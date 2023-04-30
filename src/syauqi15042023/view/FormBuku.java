@@ -140,7 +140,15 @@ public class FormBuku extends javax.swing.JFrame {
             new String [] {
                 "KodeBuku", "JudulBuku", "Pengarang", "Penerbit", "TahunTerbit"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         tblBuku.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tblBukuMouseClicked(evt);
@@ -218,7 +226,8 @@ public class FormBuku extends javax.swing.JFrame {
                 .addContainerGap(37, Short.MAX_VALUE))
         );
 
-        pack();
+        setSize(new java.awt.Dimension(673, 599));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
