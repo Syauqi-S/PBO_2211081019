@@ -13,7 +13,7 @@ public class Anggota {
     private String nama;
     private String alamat;
     
-    public Anggota(){
+    public Anggota(){ 
     }
     
     public Anggota(String nobp, String nama, String alamat){

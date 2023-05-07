@@ -133,7 +133,7 @@ public class StudentRecord {
         }
         else if(average1 > 40 && average1 <= 55){
             huruf = 'D';
-        }
+        }        
         else{
             huruf = 'E';
         }
