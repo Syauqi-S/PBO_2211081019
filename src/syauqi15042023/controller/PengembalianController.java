@@ -78,8 +78,21 @@ public class PengembalianController {
         peminjaman = peminjamanDao.getPinjam(index);
         pengembalian = pengembalianDao.getPengembalian(index);
         if(peminjaman != null){
-            formPengembalian.getCboAnggota().setSelectedItem(peminjaman.getAnggota().getNobp());
-            formPengembalian.getCboBuku().setSelectedItem(peminjaman.getBuku().getKodeBuku());
+            formPengembalian.getCboAnggota().setSelectedIndex(index);
+            formPengembalian.getCboBuku().setSelectedIndex(index);
+            formPengembalian.getTxtTglPinjam().setText(peminjaman.getTglPinjam());
+            formPengembalian.getTxtTglKembali().setText(peminjaman.getTglKembali());
+            formPengembalian.getTxtTglDikembalikan().setText(pengembalian.getTglDikembalikan());
+        }
+    }
+    
+    public void getPengembalian(){
+        int index = formPengembalian.getTblDikembalikan().getSelectedRow();
+        peminjaman = peminjamanDao.getPinjam(index);
+        pengembalian = pengembalianDao.getPengembalian(index);
+        if(peminjaman != null){
+            formPengembalian.getCboAnggota().setSelectedIndex(index);
+            formPengembalian.getCboBuku().setSelectedIndex(index);
             formPengembalian.getTxtTglPinjam().setText(peminjaman.getTglPinjam());
             formPengembalian.getTxtTglKembali().setText(peminjaman.getTglKembali());
             formPengembalian.getTxtTglDikembalikan().setText(pengembalian.getTglDikembalikan());

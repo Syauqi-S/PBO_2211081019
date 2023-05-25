@@ -282,6 +282,7 @@ public class FormPengembalian extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -335,6 +336,7 @@ public class FormPengembalian extends javax.swing.JFrame {
 
     private void tblDikembalikanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblDikembalikanMouseClicked
         // TODO add your handling code here:
+        controller.getPengembalian();
     }//GEN-LAST:event_tblDikembalikanMouseClicked
 
     /**

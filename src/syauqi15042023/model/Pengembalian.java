@@ -4,8 +4,8 @@
  */
 package syauqi15042023.model;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.time.format.DateTimeFormatter;
+import java.time.LocalDate;
 /**
  *
  * @author LEGION Y540
@@ -22,12 +22,12 @@ public class Pengembalian {
     }
     
     public Pengembalian(String tglDikembalikan, String deadline){
-        SimpleDateFormat date = new SimpleDateFormat("dd/MM/yyyy");
+        DateTimeFormatter date = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         this.tglDikembalikan = tglDikembalikan;
         try{
-            Date dikembalikan = date.parse(tglDikembalikan);
-            Date tenggat = date.parse(deadline);
-            if(dikembalikan.after(tenggat)){
+            LocalDate dikembalikan = LocalDate.parse(tglDikembalikan,date);
+            LocalDate tenggat = LocalDate.parse(deadline,date);
+            if(dikembalikan.isAfter(tenggat)){
                 terlambat = dikembalikan.compareTo(tenggat);
                 sTerlambat = "" + terlambat;
             }
@@ -58,11 +58,11 @@ public class Pengembalian {
     }
     
     public void setSTerlambat(String deadline){
-        SimpleDateFormat date = new SimpleDateFormat("dd/MM/yyyy");
+        DateTimeFormatter date = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         try{
-            Date dikembalikan = date.parse(tglDikembalikan);
-            Date tenggat = date.parse(deadline);
-            if(dikembalikan.after(tenggat)){
+            LocalDate dikembalikan = LocalDate.parse(tglDikembalikan,date);
+            LocalDate tenggat = LocalDate.parse(deadline,date);
+            if(dikembalikan.isAfter(tenggat)){
                 terlambat = dikembalikan.compareTo(tenggat);
                 sTerlambat = "" + terlambat;
             }
