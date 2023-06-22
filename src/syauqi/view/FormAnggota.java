@@ -5,6 +5,7 @@
 package syauqi.view;
 
 import javax.swing.JComboBox;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import syauqi.controller.*;
@@ -191,9 +192,16 @@ public class FormAnggota extends javax.swing.JFrame {
 
     private void btnInsertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertActionPerformed
         // TODO add your handling code here:
-        controller.insert();
-        controller.clearForm();
-        controller.tampil();
+        
+        
+        if(txtKodeAnggota.getText().equals("") || txtNamaAnggota.getText().equals("") || txtAlamat.getText().equals("")){
+            JOptionPane.showMessageDialog(null, "Data tidak boleh kosong");
+        }
+        else{
+            controller.insert();
+            controller.clearForm();
+            controller.tampil();
+        }
     }//GEN-LAST:event_btnInsertActionPerformed
 
     private void tabelAnggotaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelAnggotaMouseClicked

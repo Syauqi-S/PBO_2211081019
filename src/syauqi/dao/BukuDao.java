@@ -11,7 +11,6 @@ import syauqi.model.Buku;
  * @author LEGION Y540
  */
 public interface BukuDao {
-    
     void insert (Buku buku) throws Exception; //kerjanya akan di letak di daoImpl
     void update (Buku buku) throws Exception;
     void delete (Buku buku) throws Exception;
