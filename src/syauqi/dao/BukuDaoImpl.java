@@ -26,7 +26,6 @@ public class BukuDaoImpl implements BukuDao{
         ps.setString(3, buku.getPengarang());
         ps.setString(4, buku.getPenerbit());
         ps.executeUpdate();
-        ps.close();
     }
     
     public void update (Buku buku) throws Exception{
@@ -46,7 +45,6 @@ public class BukuDaoImpl implements BukuDao{
         PreparedStatement ps = connection.prepareStatement(sql);
         ps.setString(1, buku.getKodebuku());
         ps.executeUpdate();
-        ps.close();
     }
     
     public Buku getBuku (String kodebuku) throws Exception{
@@ -72,7 +70,7 @@ public class BukuDaoImpl implements BukuDao{
         Buku buku;
         List<Buku> list = new ArrayList<>();
         while(rs.next()){
-            buku = new Buku(); //menambahkan constructor default di model.Anggota
+            buku = new Buku(); //menambahkan constructor default di model.Buku
             buku.setKodebuku(rs.getString(1));
             buku.setJudulbuku(rs.getString(2));
             buku.setPengarang(rs.getString(3));
