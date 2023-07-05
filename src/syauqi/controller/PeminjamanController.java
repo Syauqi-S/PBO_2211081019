@@ -29,6 +29,7 @@ public class PeminjamanController {
     public PeminjamanController(FormPeminjaman formPeminjaman){
         try {
             this.formPeminjaman = formPeminjaman;
+            peminjaman = new Peminjaman();
             peminjamanDao = new PeminjamanDaoImpl(DbHelper.getConnection());
             anggotaDao = new AnggotaDaoImpl(DbHelper.getConnection());
             bukuDao = new BukuDaoImpl(DbHelper.getConnection());
@@ -70,7 +71,7 @@ public class PeminjamanController {
     
     public void insert(){
         try {
-            peminjaman = new Peminjaman();
+            //peminjaman = new Peminjaman();
             Anggota anggota = anggotaDao.getAnggota(formPeminjaman.getCboKodeAnggota()
                     .getSelectedItem().toString().split("-")[0]);
             peminjaman.setAnggota(anggota);
@@ -114,14 +115,15 @@ public class PeminjamanController {
         }
     }
     
-    public void getPeminjaman(){ try {
+    public void getPeminjaman(){ 
+        try {
         // untuk mengambil data dari anggota dan peminjaman
         String kodeanggota = formPeminjaman.getTblPeminjaman()
                 .getValueAt(formPeminjaman.getTblPeminjaman().getSelectedRow(), 0).toString();
         String kodebuku = formPeminjaman.getTblPeminjaman()
-                .getValueAt(formPeminjaman.getTblPeminjaman().getSelectedRow(), 1).toString();
-        String tglpinjam = formPeminjaman.getTblPeminjaman()
                 .getValueAt(formPeminjaman.getTblPeminjaman().getSelectedRow(), 2).toString();
+        String tglpinjam = formPeminjaman.getTblPeminjaman()
+                .getValueAt(formPeminjaman.getTblPeminjaman().getSelectedRow(), 4).toString();
         
         peminjaman = peminjamanDao.getPeminjaman(kodeanggota, kodebuku, tglpinjam);
         Anggota anggota = anggotaDao.getAnggota(peminjaman.getAnggota().getKodeanggota());
@@ -151,7 +153,7 @@ public class PeminjamanController {
                     a.getKodeanggota(),
                     a.getNamaanggota(),
                     b.getKodebuku(),
-                    b.getKodebuku(),
+                    b.getJudulbuku(),
                     p.getTglPinjam(),
                     p.getTglKembali()
                 };

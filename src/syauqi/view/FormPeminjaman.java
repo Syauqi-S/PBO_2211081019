@@ -122,15 +122,20 @@ public class FormPeminjaman extends javax.swing.JFrame {
 
             },
             new String [] {
-                "KodeAnggota", "KodeBuku", "TglPinjam", "TglKembali"
+                "KodeAnggota", "NamaAnggota", "KodeBuku", "JudulBuku", "TglPinjam", "TglKembali"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
+            }
+        });
+        tblPeminjaman.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblPeminjamanMouseClicked(evt);
             }
         });
         jScrollPane1.setViewportView(tblPeminjaman);
@@ -227,6 +232,11 @@ public class FormPeminjaman extends javax.swing.JFrame {
         // TODO add your handling code here:
         controller.clearForm();
     }//GEN-LAST:event_btnCancelActionPerformed
+
+    private void tblPeminjamanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblPeminjamanMouseClicked
+        // TODO add your handling code here:
+        controller.getPeminjaman();
+    }//GEN-LAST:event_tblPeminjamanMouseClicked
 
     /**
      * @param args the command line arguments

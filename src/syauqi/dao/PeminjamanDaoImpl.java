@@ -35,15 +35,15 @@ public class PeminjamanDaoImpl implements PeminjamanDao {
         String sql = "UPDATE peminjaman SET tglkembali=? "
                 + "WHERE kodeanggota=? AND kodebuku=? AND tglpinjam=?";
         PreparedStatement ps = connection.prepareStatement(sql);
-        ps.setString(1,peminjaman.getAnggota().getKodeanggota());
-        ps.setString(2, peminjaman.getBuku().getKodebuku());
-        ps.setString(3, peminjaman.getTglPinjam());
-        ps.setString(4, peminjaman.getTglKembali());
+        ps.setString(1, peminjaman.getTglKembali());
+        ps.setString(2,peminjaman.getAnggota().getKodeanggota());
+        ps.setString(3, peminjaman.getBuku().getKodebuku());
+        ps.setString(4, peminjaman.getTglPinjam());
         ps.executeUpdate();
     }
     
     public void delete(Peminjaman peminjaman) throws SQLException, Exception{
-        String sql = "DELETE FROM buku WHERE kodeanggota=? AND kodebuku=? AND tglpinjam=?";
+        String sql = "DELETE FROM peminjaman WHERE kodeanggota=? AND kodebuku=? AND tglpinjam=?";
         PreparedStatement ps = connection.prepareStatement(sql);
         ps.setString(1, peminjaman.getAnggota().getKodeanggota());
         ps.setString(2, peminjaman.getBuku().getKodebuku());
@@ -97,6 +97,7 @@ public class PeminjamanDaoImpl implements PeminjamanDao {
             
             peminjaman.setTglPinjam(rs.getString(3));
             peminjaman.setTglKembali(rs.getString(4));
+            list.add(peminjaman); // berfungsi untuk menampilkan data yang diambil, jadi jika tidak pakai ini maka tidak ada data yang tampil
         }
         return list;
     }
