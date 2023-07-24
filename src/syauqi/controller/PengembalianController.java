@@ -70,5 +70,32 @@ public class PengembalianController {
         }
     }
     
-   
+    public void tampil(){
+        try {
+            DefaultTableModel tableModel = (DefaultTableModel)
+                    formPengembalian.getTblPengembalian().getModel();
+            tableModel.setRowCount(0);
+            List<Pengembalian> list = pengembalianDao.getAll();
+            for(Pengembalian k : list){
+                Anggota a = anggotaDao.getAnggota(k.getAnggota().getKodeanggota());
+                Buku b = bukuDao.getBuku(k.getBuku().getKodebuku());
+                Peminjaman p = peminjamanDao.getPeminjaman(k.getAnggota().getKodeanggota(),
+                        k.getBuku().getKodebuku(), k.getPeminjaman().getTglPinjam());
+                Object[] row={
+                    a.getKodeanggota(),
+                    a.getNamaanggota(),
+                    b.getKodebuku(),
+                    p.getTglPinjam(),
+                    p.getTglKembali(),
+                    k.getTgldikembalikan(),
+                    k.getTerlambat(),
+                    k.getDenda()
+                };
+                tableModel.addRow(row);
+            }
+        } catch (Exception ex) {
+            Logger.getLogger(PengembalianController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
 }

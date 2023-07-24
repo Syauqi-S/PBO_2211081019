@@ -23,6 +23,7 @@ public class FormPengembalian extends javax.swing.JFrame {
         controller.clearForm();
         controller.isiComboAnggota();
         controller.isiComboBuku();
+        controller.tampil();
     }
 
     public JComboBox<String> getCboKodeAnggota() {

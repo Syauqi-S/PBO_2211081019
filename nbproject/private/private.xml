@@ -4,11 +4,12 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/D:/PBO/Github/PBO_2211081019/src/syauqi/model/Pengembalian.java</file>
-            <file>file:/D:/PBO/Github/PBO_2211081019/src/syauqi/dao/PengembalianDao.java</file>
+            <file>file:/D:/PBO/Github/PBO_2211081019/src/syauqi/controller/PengembalianController.java</file>
+            <file>file:/D:/PBO/Github/PBO_2211081019/src/syauqi/view/FormPeminjaman.java</file>
+            <file>file:/D:/PBO/Github/PBO_2211081019/src/syauqi/controller/BukuController.java</file>
             <file>file:/D:/PBO/Github/PBO_2211081019/src/syauqi/dao/PengembalianDaoImpl.java</file>
             <file>file:/D:/PBO/Github/PBO_2211081019/src/syauqi/view/FormPengembalian.java</file>
-            <file>file:/D:/PBO/Github/PBO_2211081019/src/syauqi/db/DbHelper.java</file>
-            <file>file:/D:/PBO/Github/PBO_2211081019/src/syauqi/dao/PeminjamanDaoImpl.java</file>
+            <file>file:/D:/PBO/Github/PBO_2211081019/src/syauqi/controller/PeminjamanController.java</file>
         </group>
     </open-files>
 </project-private>

@@ -69,6 +69,7 @@ public class Pengembalian {
     }
 
     public double getDenda() {
+        denda = terlambat * 1000;
         return denda;
     }
 
